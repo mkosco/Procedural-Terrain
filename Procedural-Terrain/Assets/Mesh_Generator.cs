@@ -6,6 +6,7 @@ using UnityEngine;
 public class Mesh_Generator : MonoBehaviour
 {
     Mesh mesh; 
+    [SerializeField] MeshCollider meshcollider;
 
     Vector3[] vertices;
     int[] triangles;
@@ -21,6 +22,8 @@ public class Mesh_Generator : MonoBehaviour
 
         CreateShape();
         UpdateMesh();
+
+        meshcollider.sharedMesh = mesh; 
     }
 
     void CreateShape(){
